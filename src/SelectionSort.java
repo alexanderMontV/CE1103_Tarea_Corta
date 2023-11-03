@@ -7,7 +7,7 @@ import java.util.Random;
 public class SelectionSort {
     static int[] values;
     static int size = 100000;
-    static int times = 15; //Numero de ejecuciones
+    static int times = 15; //Número de ejecuciones
 
     /**
      * Ejecuta las funciones para el método Selection Sort,
@@ -55,7 +55,7 @@ public class SelectionSort {
         return indexOfMin;
     }
     /**
-     * Sorts the array using the Selection Sort algorithm.
+     * Ordenación con el algoritmo Selection
      */
     static void selectSort() {
         int endIndex = size - 1;
@@ -67,9 +67,9 @@ public class SelectionSort {
         }
     }
     /**
-     * Swaps the values at two given indices in the array.
+     * Intercambia valores de posición
      * @param me es e índice del menor encontrado
-     * @param act es el indice de donde corresponde
+     * @param act es el índice de donde corresponde
      */
     static void swap(int me, int act) {
         int temp = values[me];

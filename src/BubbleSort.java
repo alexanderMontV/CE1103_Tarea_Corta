@@ -1,10 +1,8 @@
 import java.util.Random;
 
 /**
- * This class implements the Bubble Sort algorithm and measures its execution time.
- * It generates random arrays and runs the sorting algorithm 15 times,
- * reporting the time taken for each execution.
- * The code source is based on the course presentation.
+ * Clase de implementación de Bubble Sort
+ * Basado en las presentaciones del curso CE1103
  */
 public class BubbleSort {
     static int[] values;
@@ -12,10 +10,9 @@ public class BubbleSort {
     static int times = 15; //Número de ejecuciones
 
     /**
-     * The main method that initiates the execution of the Bubble Sort algorithm.
-     * It generates random arrays, runs the algorithm 15 times, and measures the execution time.
-     *
-     * @param args The command line arguments (not used).
+     * Ejecuta las funciones para el método BubbleSort,
+     * imprime en pantalla los tiempos de ejecución
+     * @param args iniciales del main
      */
     public static void main(String[] args) {
         for (int t = 1; t <= times; t++) {
@@ -31,7 +28,7 @@ public class BubbleSort {
     }
 
     /**
-     * Initializes the array with random values.
+     * Se inicializa el arreglo con números random
      */
     static void initializeArray() {
         values = new int[size];
@@ -43,7 +40,7 @@ public class BubbleSort {
     }
 
     /**
-     * Sorts the array using the Bubble Sort algorithm.
+     * SOrdenación con el algoritmo Bubble
      */
     static void bubbleSort() {
         int nElements = values.length;
@@ -57,14 +54,13 @@ public class BubbleSort {
     }
 
     /**
-     * Swaps the values at two given indices in the array.
-     *
-     * @param i The index of the first value.
-     * @param j The index of the second value.
+     * Intercambia valores de posición
+     * @param me es e índice del menor encontrado
+     * @param act es el índice de donde corresponde
      */
-    static void swap(int i, int j) {
-        int temp = values[i];
-        values[i] = values[j];
-        values[j] = temp;
+    static void swap(int me, int act) {
+        int temp = values[me];
+        values[me] = values[act];
+        values[act] = temp;
     }
 }
