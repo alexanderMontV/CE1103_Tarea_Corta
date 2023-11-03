@@ -12,7 +12,7 @@ public class QuickSort {
     static int times = 15; //Número de ejecuciones
 
     /**
-     * Ejecuta las funciones para el método Shell Sort,
+     * Ejecuta las funciones para el método Quick Sort,
      * imprime en pantalla los tiempos de ejecución
      * @param args iniciales del main
      */

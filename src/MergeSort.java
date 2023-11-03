@@ -10,7 +10,7 @@ public class MergeSort {
     static int times = 15; //Número de ejecuciones
 
     /**
-     * Ejecuta las funciones para el método Shell Sort,
+     * Ejecuta las funciones para el método Merge Sort,
      * imprime en pantalla los tiempos de ejecución
      * @param args iniciales del main
      */
