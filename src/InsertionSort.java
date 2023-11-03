@@ -6,7 +6,7 @@ import java.util.Random;
  */
 public class InsertionSort {
     static int[] values;
-    static int size = 100000;
+    static int size = 1000000;
     static int times = 15; //Número de ejecuciones
 
     /**
@@ -34,7 +34,7 @@ public class InsertionSort {
         Random rand = new Random();
 
         for (int i = 0; i < size; i++) {
-            values[i] = rand.nextInt(100000); // Range of random values
+            values[i] = rand.nextInt(1000000); // Range of random values
         }
     }
 
