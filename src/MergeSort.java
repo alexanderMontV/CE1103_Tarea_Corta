@@ -1,5 +1,8 @@
 import java.util.Random;
-
+/**
+ * Clase de implementación de Merge Sort
+ * Basado en las presentaciones del curso CE1103
+ */
 public class MergeSort {
 
     static int[] values;
