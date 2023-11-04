@@ -1,0 +1,25 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Joyanes~Aguilar%
+}{%
+Joyanes~Aguilar%
+}{%
+{\protect \APACyear {2006}}%
+}]{%
+joyanes2006}
+\APACinsertmetastar {%
+joyanes2006}%
+\begin{APACrefauthors}%
+Joyanes~Aguilar, L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{2006}.
+\newblock
+\APACrefbtitle {{Programación en C+: algoritmos, estructuras de datos y
+  objetos}} {{Programación en C+: algoritmos, estructuras de datos y
+  objetos}}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

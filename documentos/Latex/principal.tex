@@ -1,0 +1,358 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\setlength{\parindent}{1.5em}
+
+% Títulos automáticos en español
+\usepackage[spanish]{babel}
+
+% Soporte para buenas urls e hipervínculos entre secciones
+\usepackage{hyperref}
+
+% Citas y referencias en formato APA
+% Si quiere las citas y referencias en IEEE comente esta línea
+\usepackage{apacite}
+
+% Imágenes y figuras
+\usepackage{graphicx}
+
+% Código fuente con números de línea
+\usepackage{listings}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{url}
+\usepackage{titlepic}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+
+\usepgfplotslibrary{external}
+\tikzexternalize
+% Puede cambiar el lenguaje de código fuente
+% https://www.overleaf.com/learn/latex/code_listing#Supported_languages
+\lstset{
+	language=C,
+	basicstyle=\footnotesize,
+	numbers=left,
+	stepnumber=1,
+	showstringspaces=false,
+	tabsize=1,
+	breaklines=true,
+	breakatwhitespace=false,
+}
+
+
+\def \unidad{Área Académica Ingeniería en Computadores}
+\def \programa{Ingeniería en Computadores}
+\def \curso{CE1103 - Algoritmos y Estructuras de Datos I}
+\def \titulo{Tarea Corta}
+\def \subtitulo {Algoritmos de ordenamiento}
+\def \autores{
+	Montero Vargas Alexander\\
+	2023166058\\
+	
+	\vspace{0.5cm}
+	
+	Ocampo Zamora Nathalia\\
+	2021008216 
+	
+	\vspace{0.5cm}
+	
+	Sibaja Garro Bryan\\
+	2022207842
+	
+	
+}
+\def \fecha{3 de noviembre de 2023}
+\def \lugar{
+}
+
+% Inicia el documento 
+\begin{document}
+	
+	% Inserta la portada del documento
+	\input{portada}
+	
+	
+	\section*{Introducción}
+	Esta investigación tiene como objetivo analizar algunos algoritmos de ordenamiento y su rendimiento. Se busca poder comparar la eficiencia de estos algoritmos de \textit{sorting}, contrastando sus valores teóricos con los valores de ejemplos reales en pruebas con Java 17.
+	
+	Para este caso concreto se aplicaron a los algoritmos de Selection Sort, Bubble Sort, Insertion Sort, Shell Sort, Merge Sort, Quick Sort y Radix Sort utilizando los códigos de ejemplo de las presentaciones del curso. Se emplearon muestras de diez mil (10 000), cien mil (100 000) y un millón (1 000 000) de elementos de tipo entero, realizando quince (15) pruebas para cada muestra en cada uno de los algoritmos.
+	
+	Los resultados obtenidos en las quince pruebas correspondientes se anotaron para calcular un promedio de significancia, esto con el fin de realizar la comparación entre el tiempo de la prueba practica y el valor teórico correspondiente. Los datos promedios obtenidos se grafican para cada una de las cargas en los diferentes métodos de ordenamiento para observar el comportamiento de manera visual.
+	
+	\section*{Complejidad Teórica}
+	
+	\subsection*{Selection Sort:}
+	La complejidad temporal de este algorítmo es de la forma $O(n^{2})$ (\cite{joyanes2006}).
+	\subsection*{Bubble Sort:}
+	La complejidad temporal de este algorítmo es de la forma $O(n^{2})$ (\cite{joyanes2006}).
+	\subsection*{Insertion Sort:}
+	La complejidad temporal de este algorítmo es de la forma $O(n^{2})$ (\cite{joyanes2006}).
+	\subsection*{Shell Sort:}
+	La complejidad de este algorítmo es de la forma $O(nlog^{2}(n))$ (\cite{ary2016}).
+	\subsection*{Merge Sort:}
+	La complejidad de este algorítmo es de la forma $O(nlog(n))$ (\cite{digital1}). 
+	\subsection*{Quick Sort:}
+	La complejidad de este algorítmo es de la forma $O(nlog(n))$ (\cite{florez2018}).
+	\subsection*{Radix Sort:}
+	La complejidad de este algorítmo es de la forma $O(d*(n+b)))$, donde \textit{d} es el número de dígitos de la lista, \textit{n} es el número de elementos en la lista y \textit{b} es la base o valde usado. (\cite{unk1}).
+	
+	\section*{Gráficas de número de elementos vs tiempo de cada algoritmo}
+	
+	
+	\subsection*{Selection Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Selection Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.0474)
+					(100000,2.654)
+					(1000000,335.328)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	
+	\subsection*{Bubble Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Bubble Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.1238)
+					(100000,15.311)
+					(1000000,1357.5696)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\subsection*{Insertion Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Insertion Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.0102)
+					(100000,0.8015)
+					(1000000,88.454)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\subsection*{Shell Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Shell Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.0022)
+					(100000,0.0225)
+					(1000000,0.3292)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\subsection*{Merge Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Merge Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.003)
+					(100000,0.051)
+					(1000000,0.27)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	
+	\subsection*{QuickSort Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el QuickSort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.001533)
+					(100000,0.01813)
+					(1000000,0.1858)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\subsection*{Radix Sort}
+	\begin{center}
+		\begin{tikzpicture}
+			\begin{axis}[
+				title={Tiempo de ordenamiento para el Radix Sort},
+				xlabel={Elementos en el arreglo},
+				ylabel={Tiempo (s)},
+				xmin=10000, xmax=1000000,
+				ymode=log,
+				xmode=log,
+				xtick={10000, 100000, 1000000},
+				ytick={0.01, 0.1, 1, 10, 100, 1000},
+				legend pos=north west,
+				ymajorgrids=true,
+				grid style=dashed,
+				]
+				
+				\addplot[
+				color=blue,
+				mark=diamond,
+				]
+				coordinates {
+					(10000,0.0013)
+					(100000,0.0081)
+					(1000000,0.083)
+				};
+				
+			\end{axis}
+		\end{tikzpicture}
+	\end{center}
+	\section*{ Análisis de resultados}
+	\subsection*{Algoritmos de complejidad cuadratica $O(n^{2})$}
+	Los algoritmos de complejidad cuadrática, como el Selection Sort, Bubble Sort e Insertion Sort muestra un alto incremento en el tiempo de ejecución al aumentar la carga, en este caso la cantidad de elementos del arreglo que se deseaba ordenar. Entre estos el algoritmo que más tiempo requirió para ordenar la lista dada fue el Bubble Sort, y el de menor tiempo fue el Insertion Sort.
+	\subsection*{Algoritmos de complejidad logarítmica $O(nlog(n))$}
+	Por otro lado, los algoritmos Shell Sort, Merge Sort y Quicksort que presentan una complejidad logarítmica, da mejor resultados en términos de menor tiempo de ejecución, logrando tiempos de menos de un segundo (1s) en cargas de un millón de elementos. Entre estos tres el que mejor resultado brindó fue el Quicksort y el de peor fue el Shell ya que este es un logaritmo al cuadrado, pero por tiempos muy mínimos.
+	\subsection*{Algoritmos de complejidad lineal $O(n)$}
+	El Radix Sort sin duda fue con el que se obtuvieron los mejores resultados, reportando tiempos por debajo de 1/10 s para la carga de un millón de elementos, esta complejidad casi lineal hace que se mantenga en tiempos muy estables, su variación se debe a que en su fórmula de complejidad entran en factor la cantidad de dígitos lo cuál hace que varíe de su linealidad.
+	\section*{Conclusiones} La complejidad $O(n^2)$ es significativamente menos eficiente en comparación a la complejidad $O(nlog(n))$   
+	
+	Los tiempos de ejecución de los algorítmos varían dependiendo de la carga de elementos que se entregan para ordenar, esto por la dependencia del elemento \textit{n} en la fórmulas de complejidad que hace referencia a la cantidad de elementos
+	
+	Los algoritmos Sort, Merge y Quicksort tienen una complejidad $O(nlog(n))$ mientras que por otro lado los algoritmos Selection, Bubble e Insertion cuentan con complejidad $O(nlog(n))$
+	
+	Entre algoritmos de la misma complejidad existen algunos que demuestran ser más optimos y brindan mejor rendimiento en comparación con otros de su misma categoría
+	
+	Los algoritmos que brindaron el mejor rendimiento en cargas muy grandes fueron el Radix Sort con su comlejidad semilineal y el quickSort con complejidad logarítmica
+	
+	El Radix Sort puede presentar mejores resultados si se trabajan ordenando elementos de menor cantidad de dígitos
+	
+	Si se necesita ordenar grandes cargas de datos, como para proyectos de \textit{big data} se recomienda emplear algorítmos de ordenamiento que presenten complejidad temporal $O(nlog(n))$ o más optimos para obtener resultados en menor tiempo
+	\section*{Repositorio}
+	Enlace al repositorio github del código fuente utilizado en las pruebas de rendimiento\\ \url{https://github.com/alexanderMontV/CE1103_Tarea_Corta}
+	
+	\newpage 
+	
+	
+	% Estilo de bibliografía APA
+	% Si quiere usar el estilo IEEE comente esta línea
+	\bibliographystyle{apacite}
+	
+	% Descomente esta línea para usar el estilo de bibliografía IEEE
+	%\bibliographystyle{ieeetr}
+	\bibliography{referencias}
+	
+\end{document}
